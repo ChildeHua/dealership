@@ -4,15 +4,15 @@ spring:
     url: jdbc:mysql://192.168.56.10:3306/dealership_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: 127.0.0.1:8848
-#    alicloud:
-#      access-key: LTAI5t8oUTYNdFWGXMTg2uAo
-#      secret-key: 9KUclmKS99KG04ASgkGBRFW07jG17V
-#      oss:
-#        endpoint: oss-cn-hongkong.aliyuncs.com
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI5tHLNqziCD8QrSbRSRQ1
+      secret-key: QGIgcXFiMVDxrjn85rK1wHKj3Dkr7t
+      oss:
+        endpoint: oss-cn-hongkong.aliyuncs.com
 
 # MapperScan
 # sql映射文件位置
@@ -29,4 +29,4 @@ server:
 
 logging:
   level:
-    com.chd.gulimall: debug
+    com.chd.dealership: debug

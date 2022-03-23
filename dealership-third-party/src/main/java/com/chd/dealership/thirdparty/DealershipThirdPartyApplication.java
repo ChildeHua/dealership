@@ -1,17 +1,15 @@
-package com.chd.dealership.product;
+package com.chd.dealership.thirdparty;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@MapperScan("com.chd.dealership.product.dao")
 @EnableDiscoveryClient
 @SpringBootApplication
-public class DealershipProductApplication {
+public class DealershipThirdPartyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DealershipProductApplication.class, args);
+        SpringApplication.run(DealershipThirdPartyApplication.class, args);
     }
 
 }

@@ -13,19 +13,18 @@ spring:
         - Query=url,qq
 
       - id: product_route
-        uri: lb://gulimall-product
+        uri: lb://dealership-product
         predicates:
         - Path=/api/product/**
         filters:
         - RewritePath=/api/(?<segment>.*),/$\{segment}
 
       - id: third_party_route
-        uri: lb://gulimall-third-party
+        uri: lb://dealership-third-party
         predicates:
         - Path=/api/thirdparty/**
         filters:
         - RewritePath=/api/thirdparty/(?<segment>/?.*),/$\{segment}
-
 
 
 

@@ -13,7 +13,6 @@
 
     <modules>
         <module>dealership-coupon</module>
-
         <module>dealership-member</module>
         <module>dealership-order</module>
         <module>dealership-ware</module>
@@ -22,6 +21,7 @@
         <module>renren-generator</module>
         <module>dealership-common</module>
         <module>dealership-gateway</module>
+        <module>dealership-third-party</module>
     </modules>
 
 </project>

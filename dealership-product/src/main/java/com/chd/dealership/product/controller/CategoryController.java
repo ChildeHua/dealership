@@ -50,9 +50,9 @@ public class CategoryController {
     @RequestMapping("/info/{catId}")
     //@RequiresPermissions("product:category:info")
     public R info(@PathVariable("catId") Long catId){
-		CategoryEntity category = categoryService.getById(catId);
+        CategoryEntity category = categoryService.getById(catId);
 
-        return R.ok().put("category", category);
+        return R.ok().put("data", category);
     }
 
     /**

@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI5tHLNqziCD8QrSbRSRQ1
+      secret-key: QGIgcXFiMVDxrjn85rK1wHKj3Dkr7t
+      oss:
+        endpoint: oss-cn-hongkong.aliyuncs.com
+        bucket: dealership
+
+  application:
+    name: dealership-third-party
+
+server:
+  port: 30000
