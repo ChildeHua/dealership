@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.chd.dealership</groupId>
+    <artifactId>dealership</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>dealership</name>
+    <description>车行-聚合服务</description>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>dealership-coupon</module>
+
+        <module>dealership-member</module>
+        <module>dealership-order</module>
+        <module>dealership-ware</module>
+        <module>dealership-product</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>dealership-common</module>
+        <module>dealership-gateway</module>
+    </modules>
+
+</project>
