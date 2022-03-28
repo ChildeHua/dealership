@@ -22,26 +22,22 @@ import java.util.Map;
 @RestControllerAdvice(basePackages = "com.chd.dealership.product.controller")
 public class DealershipExceptionControllerAdvice {
     //@ExceptionHandler用于设置所标识方法处理的异常
-    @ExceptionHandler(value = Exception.class) // 也可以返回ModelAndView
-    public R handleValidException(MethodArgumentNotValidException exception){
+    @ExceptionHandler(value= MethodArgumentNotValidException.class)
+    public R handleVaildException(MethodArgumentNotValidException e){
+        log.error("数据校验出现问题{}，异常类型：{}",e.getMessage(),e.getClass());
+        BindingResult bindingResult = e.getBindingResult();
 
-        Map<String,String> map=new HashMap<>();
-        // 获取数据校验的错误结果
-        BindingResult bindingResult = exception.getBindingResult();
-        bindingResult.getFieldErrors().forEach(fieldError -> {
-            String message = fieldError.getDefaultMessage();
-            String field = fieldError.getField();
-            map.put(field,message);
+        Map<String,String> errorMap = new HashMap<>();
+        bindingResult.getFieldErrors().forEach((fieldError)->{
+            errorMap.put(fieldError.getField(),fieldError.getDefaultMessage());
         });
-
-        log.error("数据校验出现问题{},异常类型{}",exception.getMessage(),exception.getClass());
-
-        return R.error(BizCodeEnume.VAILD_EXCEPTION.getCode(),BizCodeEnume.VAILD_EXCEPTION.getMsg()).put("data",map);
+        return R.error(BizCodeEnume.VAILD_EXCEPTION.getCode(),BizCodeEnume.VAILD_EXCEPTION.getMsg()).put("data",errorMap);
     }
 
     @ExceptionHandler(value = Throwable.class)
     public R handleException(Throwable throwable){
-        log.error("未知异常{},异常类型{}",throwable.getMessage(),throwable.getClass());
+
+        log.error("错误：",throwable);
         return R.error(BizCodeEnume.UNKNOW_EXCEPTION.getCode(),BizCodeEnume.UNKNOW_EXCEPTION.getMsg());
     }
 

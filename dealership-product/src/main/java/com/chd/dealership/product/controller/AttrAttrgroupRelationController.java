@@ -49,7 +49,7 @@ public class AttrAttrgroupRelationController {
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("product:attrattrgrouprelation:info")
     public R info(@PathVariable("id") Long id){
-		AttrAttrgroupRelationEntity attrAttrgroupRelation = attrAttrgroupRelationService.getById(id);
+        AttrAttrgroupRelationEntity attrAttrgroupRelation = attrAttrgroupRelationService.getById(id);
 
         return R.ok().put("attrAttrgroupRelation", attrAttrgroupRelation);
     }
@@ -60,7 +60,7 @@ public class AttrAttrgroupRelationController {
     @RequestMapping("/save")
     //@RequiresPermissions("product:attrattrgrouprelation:save")
     public R save(@RequestBody AttrAttrgroupRelationEntity attrAttrgroupRelation){
-		attrAttrgroupRelationService.save(attrAttrgroupRelation);
+        attrAttrgroupRelationService.save(attrAttrgroupRelation);
 
         return R.ok();
     }
@@ -71,7 +71,7 @@ public class AttrAttrgroupRelationController {
     @RequestMapping("/update")
     //@RequiresPermissions("product:attrattrgrouprelation:update")
     public R update(@RequestBody AttrAttrgroupRelationEntity attrAttrgroupRelation){
-		attrAttrgroupRelationService.updateById(attrAttrgroupRelation);
+        attrAttrgroupRelationService.updateById(attrAttrgroupRelation);
 
         return R.ok();
     }
@@ -82,7 +82,7 @@ public class AttrAttrgroupRelationController {
     @RequestMapping("/delete")
     //@RequiresPermissions("product:attrattrgrouprelation:delete")
     public R delete(@RequestBody Long[] ids){
-		attrAttrgroupRelationService.removeByIds(Arrays.asList(ids));
+        attrAttrgroupRelationService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

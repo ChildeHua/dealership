@@ -2,15 +2,15 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: baidu_route
-        uri: http://www.baidu.com
-        predicates:
-        - Query=url,baidu
-
-      - id: test_route
-        uri: http://www.qq.com
-        predicates:
-        - Query=url,qq
+#      - id: baidu_route
+#        uri: http://www.baidu.com
+#        predicates:
+#        - Query=url,baidu
+#
+#      - id: test_route
+#        uri: http://www.qq.com
+#        predicates:
+#        - Query=url,qq
 
       - id: product_route
         uri: lb://dealership-product
@@ -26,7 +26,19 @@ spring:
         filters:
         - RewritePath=/api/thirdparty/(?<segment>/?.*),/$\{segment}
 
+      - id: member_route
+        uri: lb://dealership-member
+        predicates:
+        - Path=/api/member/**
+        filters:
+        - RewritePath=/api/(?<segment>.*),/$\{segment}
 
+      - id: ware_route
+        uri: lb://dealership-ware
+        predicates:
+        - Path=/api/ware/**
+        filters:
+        - RewritePath=/api/(?<segment>.*),/$\{segment}
 
 
 

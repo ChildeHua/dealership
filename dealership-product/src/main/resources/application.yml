@@ -13,6 +13,9 @@ spring:
       secret-key: QGIgcXFiMVDxrjn85rK1wHKj3Dkr7t
       oss:
         endpoint: oss-cn-hongkong.aliyuncs.com
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
 
 # MapperScan
 # sql映射文件位置

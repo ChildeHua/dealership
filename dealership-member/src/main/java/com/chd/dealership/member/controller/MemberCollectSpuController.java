@@ -49,7 +49,7 @@ public class MemberCollectSpuController {
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("member:membercollectspu:info")
     public R info(@PathVariable("id") Long id){
-		MemberCollectSpuEntity memberCollectSpu = memberCollectSpuService.getById(id);
+        MemberCollectSpuEntity memberCollectSpu = memberCollectSpuService.getById(id);
 
         return R.ok().put("memberCollectSpu", memberCollectSpu);
     }
@@ -60,7 +60,7 @@ public class MemberCollectSpuController {
     @RequestMapping("/save")
     //@RequiresPermissions("member:membercollectspu:save")
     public R save(@RequestBody MemberCollectSpuEntity memberCollectSpu){
-		memberCollectSpuService.save(memberCollectSpu);
+        memberCollectSpuService.save(memberCollectSpu);
 
         return R.ok();
     }
@@ -71,7 +71,7 @@ public class MemberCollectSpuController {
     @RequestMapping("/update")
     //@RequiresPermissions("member:membercollectspu:update")
     public R update(@RequestBody MemberCollectSpuEntity memberCollectSpu){
-		memberCollectSpuService.updateById(memberCollectSpu);
+        memberCollectSpuService.updateById(memberCollectSpu);
 
         return R.ok();
     }
@@ -82,7 +82,7 @@ public class MemberCollectSpuController {
     @RequestMapping("/delete")
     //@RequiresPermissions("member:membercollectspu:delete")
     public R delete(@RequestBody Long[] ids){
-		memberCollectSpuService.removeByIds(Arrays.asList(ids));
+        memberCollectSpuService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

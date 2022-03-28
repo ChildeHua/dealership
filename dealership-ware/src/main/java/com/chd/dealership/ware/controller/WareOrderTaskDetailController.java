@@ -49,7 +49,7 @@ public class WareOrderTaskDetailController {
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("ware:wareordertaskdetail:info")
     public R info(@PathVariable("id") Long id){
-		WareOrderTaskDetailEntity wareOrderTaskDetail = wareOrderTaskDetailService.getById(id);
+        WareOrderTaskDetailEntity wareOrderTaskDetail = wareOrderTaskDetailService.getById(id);
 
         return R.ok().put("wareOrderTaskDetail", wareOrderTaskDetail);
     }
@@ -60,7 +60,7 @@ public class WareOrderTaskDetailController {
     @RequestMapping("/save")
     //@RequiresPermissions("ware:wareordertaskdetail:save")
     public R save(@RequestBody WareOrderTaskDetailEntity wareOrderTaskDetail){
-		wareOrderTaskDetailService.save(wareOrderTaskDetail);
+        wareOrderTaskDetailService.save(wareOrderTaskDetail);
 
         return R.ok();
     }
@@ -71,7 +71,7 @@ public class WareOrderTaskDetailController {
     @RequestMapping("/update")
     //@RequiresPermissions("ware:wareordertaskdetail:update")
     public R update(@RequestBody WareOrderTaskDetailEntity wareOrderTaskDetail){
-		wareOrderTaskDetailService.updateById(wareOrderTaskDetail);
+        wareOrderTaskDetailService.updateById(wareOrderTaskDetail);
 
         return R.ok();
     }
@@ -82,7 +82,7 @@ public class WareOrderTaskDetailController {
     @RequestMapping("/delete")
     //@RequiresPermissions("ware:wareordertaskdetail:delete")
     public R delete(@RequestBody Long[] ids){
-		wareOrderTaskDetailService.removeByIds(Arrays.asList(ids));
+        wareOrderTaskDetailService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

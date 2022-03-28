@@ -3,7 +3,9 @@ package com.chd.dealership.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.chd.common.utils.PageUtils;
 import com.chd.dealership.product.entity.AttrGroupEntity;
+import com.chd.dealership.product.vo.AttrGroupWithAttrsVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,10 @@ import java.util.Map;
 public interface AttrGroupService extends IService<AttrGroupEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    //找到catelogId的完整路径（级联选择器）    [父/子/孙]
+    PageUtils queryPage(Map<String, Object> params, Long catelogId);
+
+    List<AttrGroupWithAttrsVo> getAttrGroupWithAttrsByCatelogId(Long catelogId);
 }
 

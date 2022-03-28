@@ -13,8 +13,11 @@ import java.util.Map;
  * @email 444751770@qq.com
  * @date 2022-03-22 14:53:46
  */
-public interface SpuInfoDescService extends IService<SpuInfoDescEntity> {
+public interface    SpuInfoDescService extends IService<SpuInfoDescEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    void saveSpuInfoDesc(SpuInfoDescEntity descEntity);
+
 }
 

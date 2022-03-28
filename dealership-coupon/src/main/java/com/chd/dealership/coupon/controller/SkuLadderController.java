@@ -49,7 +49,7 @@ public class SkuLadderController {
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:skuladder:info")
     public R info(@PathVariable("id") Long id){
-		SkuLadderEntity skuLadder = skuLadderService.getById(id);
+        SkuLadderEntity skuLadder = skuLadderService.getById(id);
 
         return R.ok().put("skuLadder", skuLadder);
     }
@@ -60,7 +60,7 @@ public class SkuLadderController {
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:skuladder:save")
     public R save(@RequestBody SkuLadderEntity skuLadder){
-		skuLadderService.save(skuLadder);
+        skuLadderService.save(skuLadder);
 
         return R.ok();
     }
@@ -71,7 +71,7 @@ public class SkuLadderController {
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:skuladder:update")
     public R update(@RequestBody SkuLadderEntity skuLadder){
-		skuLadderService.updateById(skuLadder);
+        skuLadderService.updateById(skuLadder);
 
         return R.ok();
     }
@@ -82,7 +82,7 @@ public class SkuLadderController {
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:skuladder:delete")
     public R delete(@RequestBody Long[] ids){
-		skuLadderService.removeByIds(Arrays.asList(ids));
+        skuLadderService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

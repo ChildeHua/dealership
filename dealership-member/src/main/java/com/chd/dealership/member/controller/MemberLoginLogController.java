@@ -49,7 +49,7 @@ public class MemberLoginLogController {
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("member:memberloginlog:info")
     public R info(@PathVariable("id") Long id){
-		MemberLoginLogEntity memberLoginLog = memberLoginLogService.getById(id);
+        MemberLoginLogEntity memberLoginLog = memberLoginLogService.getById(id);
 
         return R.ok().put("memberLoginLog", memberLoginLog);
     }
@@ -60,7 +60,7 @@ public class MemberLoginLogController {
     @RequestMapping("/save")
     //@RequiresPermissions("member:memberloginlog:save")
     public R save(@RequestBody MemberLoginLogEntity memberLoginLog){
-		memberLoginLogService.save(memberLoginLog);
+        memberLoginLogService.save(memberLoginLog);
 
         return R.ok();
     }
@@ -71,7 +71,7 @@ public class MemberLoginLogController {
     @RequestMapping("/update")
     //@RequiresPermissions("member:memberloginlog:update")
     public R update(@RequestBody MemberLoginLogEntity memberLoginLog){
-		memberLoginLogService.updateById(memberLoginLog);
+        memberLoginLogService.updateById(memberLoginLog);
 
         return R.ok();
     }
@@ -82,7 +82,7 @@ public class MemberLoginLogController {
     @RequestMapping("/delete")
     //@RequiresPermissions("member:memberloginlog:delete")
     public R delete(@RequestBody Long[] ids){
-		memberLoginLogService.removeByIds(Arrays.asList(ids));
+        memberLoginLogService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
